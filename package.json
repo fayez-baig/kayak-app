@@ -39,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axios": "^0.26.0",
+    "axios-jsonp": "^1.0.4",
+    "node-sass": "^7.0.1",
+    "react-query": "^3.34.16"
   }
 }
