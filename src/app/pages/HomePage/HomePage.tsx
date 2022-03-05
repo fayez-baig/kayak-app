@@ -15,14 +15,21 @@ const HomePage = () => {
 
   const filteredData = getFilteredData(data, checkedValues);
 
-  const { paginatedAirlinesData } = useMemo(() => {
+  const airLineCards = useMemo(() => {
     const indexOfLastAirlinesData = currentPage * itemsPerPage;
     const indexOfFirstAirlinesData = indexOfLastAirlinesData - itemsPerPage;
-    const paginatedAirlinesData = filteredData?.slice(
-      indexOfFirstAirlinesData,
-      indexOfLastAirlinesData
-    );
-    return { paginatedAirlinesData };
+    return filteredData
+      ?.slice(indexOfFirstAirlinesData, indexOfLastAirlinesData)
+      .map(({ logoURL, site, name, alliance, phone }, i) => (
+        <Card
+          key={i}
+          logoUrl={logoURL}
+          title={name}
+          alliance={(alliance !== "none" && alliance) || ""}
+          phone={phone}
+          website={site}
+        />
+      ));
   }, [currentPage, filteredData, itemsPerPage]);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
@@ -39,20 +46,7 @@ const HomePage = () => {
         setCurrentPage={setCurrentPage}
       />
 
-      <div className="grid-container">
-        {paginatedAirlinesData.map(
-          ({ logoURL, site, name, alliance, phone }, i) => (
-            <Card
-              key={i}
-              logoUrl={logoURL}
-              title={name}
-              alliance={(alliance !== "none" && alliance) || ""}
-              phone={phone}
-              website={site}
-            />
-          )
-        )}
-      </div>
+      <div className="grid-container">{airLineCards}</div>
 
       <Pagination
         itemsPerPage={itemsPerPage}
