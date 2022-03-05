@@ -1,29 +1,23 @@
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 300px);
+  grid-template-columns: 300px;
   grid-gap: 16px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 650px) {
   .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-gap: 16px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .grid-container {
-    display: grid;
     grid-template-columns: repeat(2, 300px);
-    grid-gap: 16px;
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 1000px) {
   .grid-container {
-    display: grid;
-    grid-template-columns: 300px;
-    grid-gap: 16px;
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 300px);
   }
 }
