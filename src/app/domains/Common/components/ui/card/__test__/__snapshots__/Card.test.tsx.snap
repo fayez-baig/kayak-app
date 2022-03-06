@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should render and match the snapshot 1`] = `
+<div
+  className="card-wrapper"
+>
+  <img
+    alt="SuBús"
+    className="card-logo"
+    src="https://kayak.com/rimg/provider-logos/airlines/v/SUBUS.png?crop=false&width=108&height=92&fallback=default1.png&_v=cf7f153576dad48e814135373e3baf34"
+  />
+  <div
+    className="card-container"
+  >
+    <div
+      className="card-title"
+    >
+      SuBús
+    </div>
+    <div
+      className="card-info"
+    >
+      <div
+        className="card-heading"
+      >
+        none
+      </div>
+      <div
+        className="card-heading"
+      >
+        
+      </div>
+      <div
+        className="card-subheading"
+      >
+        https://subus.cl/
+      </div>
+    </div>
+  </div>
+</div>
+`;

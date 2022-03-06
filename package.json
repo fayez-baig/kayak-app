@@ -28,6 +28,16 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/index.tsx",
+      "!src/react-app-env.d.ts",
+      "!src/**/types.{ts,tsx}",
+      "!src/**/index.tsx",
+      "!src/**/async.tsx"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,9 +51,11 @@
     ]
   },
   "devDependencies": {
+    "@types/react-test-renderer": "^17.0.1",
     "axios": "^0.26.0",
     "axios-jsonp": "^1.0.4",
     "node-sass": "^7.0.1",
-    "react-query": "^3.34.16"
+    "react-query": "^3.34.16",
+    "react-test-renderer": "^17.0.2"
   }
 }

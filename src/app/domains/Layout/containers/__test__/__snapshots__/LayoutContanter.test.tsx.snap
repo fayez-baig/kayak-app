@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LayoutContainer /> should render and match the snapshot 1`] = `
+<React.Fragment>
+  <Header />
+  <Content>
+    <HomePage />
+  </Content>
+</React.Fragment>
+`;

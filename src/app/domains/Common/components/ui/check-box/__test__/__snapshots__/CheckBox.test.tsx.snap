@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CheckBox /> should render and match the snapshot 1`] = `
+<div
+  className="checkbox-wrapper"
+>
+  <input
+    checked={true}
+    data-testid="Oneworld"
+    id="Oneworld"
+    name="Oneworld"
+    onChange={[MockFunction]}
+    type="checkbox"
+    value="OW"
+  />
+  <label
+    htmlFor="Oneworld"
+  >
+    Oneworld
+  </label>
+</div>
+`;

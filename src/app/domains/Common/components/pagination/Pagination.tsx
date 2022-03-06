@@ -1,5 +1,6 @@
 import { FC, ReactElement } from "react";
 import { PaginationProps } from "./types";
+import { NEXT_BUTTON_TEST_ID, PREV_BUTTON_TEST_ID } from "utils/constants";
 import "./pagination.scss";
 
 const Pagination: FC<PaginationProps> = ({
@@ -19,14 +20,21 @@ const Pagination: FC<PaginationProps> = ({
   return (
     <div className="pagination-container">
       <button
+        type="button"
+        data-testid={PREV_BUTTON_TEST_ID}
         className="btn"
         onClick={() => paginate(currentPage - 1)}
         disabled={currentPage === 1}
       >
         &lt;
       </button>
-      <span className="pagination-info">{`${currentPage} of ${totalPage}`}</span>
+      <span
+        data-testid="info"
+        className="pagination-info"
+      >{`${currentPage} of ${totalPage}`}</span>
       <button
+        type="button"
+        data-testid={NEXT_BUTTON_TEST_ID}
         className="btn"
         onClick={() => paginate(currentPage + 1)}
         disabled={currentPage === totalPage}
