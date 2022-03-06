@@ -24,7 +24,7 @@ const renderComponent = () =>
   );
 
 describe("useAirLinesData", () => {
-  it("getAirLinesData to be called", () => {
+  it("should getAirLinesData to be called", () => {
     const getAirLinesDataFunc = jest
       .spyOn(api, "getAirLinesData")
       .mockResolvedValue({ data: data });

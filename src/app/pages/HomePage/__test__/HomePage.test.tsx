@@ -18,14 +18,14 @@ describe("<HomePage />", () => {
     jest.clearAllMocks();
   });
 
-  it("Displays loading indicator", () => {
+  it("should display loading indicator", () => {
     mockedUseAirLinesData.mockImplementation(() => ({ isLoading: true }));
 
     const { getByTestId } = render(<HomePage />);
     expect(getByTestId(LOADER_TEST_ID)).toBeTruthy();
   });
 
-  it("Displays data", () => {
+  it("should display data", () => {
     const data = [
       {
         site: "https://subus.cl/",
@@ -44,7 +44,7 @@ describe("<HomePage />", () => {
     expect(findByText(data[0].name)).toBeTruthy();
   });
 
-  it("Displays data with alliance none", () => {
+  it("should display data with alliance none", () => {
     const data = [
       {
         site: "https://subus.cl/",
@@ -63,7 +63,7 @@ describe("<HomePage />", () => {
     expect(queryByText(data[0].alliance)).toBeFalsy();
   });
 
-  it("Displays error message", () => {
+  it("should displays error message", () => {
     mockedUseAirLinesData.mockImplementation(() => ({
       isLoading: false,
       isError: true,

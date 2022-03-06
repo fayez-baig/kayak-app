@@ -18,14 +18,14 @@ describe("<Filter />", () => {
     expect(renderedOutput).toMatchSnapshot();
   });
 
-  it("checkbox is unchecked", () => {
+  it("checkbox should be unchecked", () => {
     const { getByTestId } = render(<Filter {...props} />);
     const input = getByTestId(FILTER_TITLE);
     fireEvent.click(input);
     expect(input).toBeTruthy();
   });
 
-  it("checkbox is checked", () => {
+  it("checkbox should be checked", () => {
     props.checkedValues = ["SW"];
     const { getByTestId } = render(<Filter {...props} />);
     const input = getByTestId(FILTER_TITLE);
