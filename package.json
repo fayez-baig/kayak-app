@@ -28,6 +28,14 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/index.tsx",
+      "!src/react-app-env.d.ts",
+      "!src/**/types.{ts,tsx}"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
