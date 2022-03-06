@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> should render and match the snapshot 1`] = `
+<div
+  className="pagination-container"
+>
+  <button
+    className="btn"
+    data-testid="prev-btn"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    &lt;
+  </button>
+  <span
+    className="pagination-info"
+    data-testid="info"
+  >
+    1 of 108
+  </span>
+  <button
+    className="btn"
+    data-testid="next-btn"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    &gt;
+  </button>
+</div>
+`;

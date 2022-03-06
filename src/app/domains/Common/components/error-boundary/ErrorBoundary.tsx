@@ -4,6 +4,7 @@
 import { Component } from "react";
 import { SvgIcon } from "app/domains/Common/components/svg-icon";
 import "./error-boundary.scss";
+import { ERROR_BOUNDARY_MESSAGE } from "utils/constants";
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +27,7 @@ class ErrorBoundary extends Component {
               <SvgIcon icon="Error404Icon" />
             </div>
             <h1>
-              <strong>Oops !</strong>
+              <strong>{ERROR_BOUNDARY_MESSAGE}</strong>
               <br /> Something went wrong
             </h1>
           </section>

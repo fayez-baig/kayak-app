@@ -4,6 +4,6 @@ export interface FilterProps {
   setCurrentPage: (data: number) => void;
 }
 
-export interface handleCheckedTypes {
+export interface HandleCheckedTypes {
   target: { value: string };
 }

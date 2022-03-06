@@ -17,6 +17,7 @@ const CheckBox: FC<CheckBoxProps> = ({
         id={name}
         name={name}
         checked={checked}
+        data-testid={name}
         value={value}
         onChange={onChange}
         {...props}

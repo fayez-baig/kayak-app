@@ -1,7 +1,9 @@
 import { FC, ReactElement } from "react";
-import { alliances } from "utils/helper";
+import { ALLIANCES } from "utils/constants";
 import { CheckBox } from "../ui";
-import { FilterProps, handleCheckedTypes } from "./types";
+import { FilterProps, HandleCheckedTypes } from "./types";
+import { INITIAL_PAGE_NUMBER } from "utils/constants";
+
 import "./filter.scss";
 
 const Filter: FC<FilterProps> = ({
@@ -9,8 +11,8 @@ const Filter: FC<FilterProps> = ({
   setCheckedValues,
   setCurrentPage,
 }): ReactElement => {
-  const handleChecked = ({ target: { value } }: handleCheckedTypes) => {
-    setCurrentPage(1);
+  const handleChecked = ({ target: { value } }: HandleCheckedTypes) => {
+    setCurrentPage(INITIAL_PAGE_NUMBER);
     if (checkedValues.includes(value)) {
       const arr = checkedValues.filter((item) => item !== value);
       setCheckedValues(arr);
@@ -24,7 +26,7 @@ const Filter: FC<FilterProps> = ({
       <h1 className="heading">Airlines</h1>
       <div className="subheading">Filter by Alliance</div>
       <div className="filter-wrapper">
-        {alliances.map(({ code, name }) => (
+        {ALLIANCES.map(({ code, name }) => (
           <CheckBox
             key={code}
             onChange={handleChecked}

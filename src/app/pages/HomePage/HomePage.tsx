@@ -5,13 +5,18 @@ import Pagination from "app/domains/Common/components/pagination/Pagination";
 import { SuspenseLoader } from "app/domains/Common/components/loaders";
 import { useAirlinesData } from "app/domains/hooks/useAirlinesData";
 import { getFilteredData } from "utils/helper";
+import {
+  ITEMS_PER_PAGE,
+  INITIAL_PAGE_NUMBER,
+  ERROR_MESSAGE,
+} from "utils/constants";
 import "./homepage.scss";
 
 const HomePage = () => {
   const { data, isLoading, isError } = useAirlinesData();
   const [checkedValues, setCheckedValues] = useState<string[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [itemsPerPage] = useState(12);
+  const [currentPage, setCurrentPage] = useState<number>(INITIAL_PAGE_NUMBER);
+  const [itemsPerPage] = useState(ITEMS_PER_PAGE);
 
   const filteredData = getFilteredData(data, checkedValues);
 
@@ -32,11 +37,9 @@ const HomePage = () => {
       ));
   }, [currentPage, filteredData, itemsPerPage]);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-  if (isError) return <div>Something went wrong !!</div>;
-
   if (isLoading) return <SuspenseLoader />;
+
+  if (isError) return <div>{ERROR_MESSAGE}</div>;
 
   return (
     <>
@@ -50,8 +53,8 @@ const HomePage = () => {
 
       <Pagination
         itemsPerPage={itemsPerPage}
-        totalAirlinesData={filteredData.length}
-        paginate={paginate}
+        totalAirlinesData={filteredData?.length}
+        paginate={setCurrentPage}
         currentPage={currentPage}
       />
     </>
