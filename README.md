@@ -4,7 +4,7 @@
 
 > Technology used: `React 17` , `React Query`, `SCSS`,
 
-> Live application can be accessed from : [Live-Demo](https://rmvn1k.csb.app/)
+> Live application can be accessed from : [Live-Demo](https://07glc9.csb.app/)
 
 ---
 
@@ -31,7 +31,7 @@ $ npm install
 > Navigate to `http://localhost:3000/`.
 > The app will automatically reload if you change any of the source files.
 
-> Alternatively, Please have a look on [codesandbox](https://codesandbox.io/s/fayez-kayak-app-rmvn1k)
+> Alternatively, Please have a look on [codesandbox](https://codesandbox.io/s/fayez-kayak-app-07glc9)
 
 >
 
